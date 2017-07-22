@@ -4,7 +4,7 @@
 #
 Name     : perl-Params-ValidationCompiler
 Version  : 0.24
-Release  : 4
+Release  : 5
 URL      : http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.24.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.24.tar.gz
 Summary  : 'Build an optimized subroutine parameter validator once, use it forever'
@@ -14,6 +14,7 @@ Requires: perl-Params-ValidationCompiler-doc
 BuildRequires : perl(Eval::Closure)
 BuildRequires : perl(Exception::Class)
 BuildRequires : perl(Importer)
+BuildRequires : perl(Specio)
 BuildRequires : perl(Sub::Info)
 BuildRequires : perl(Test2::Bundle::Extended)
 
@@ -33,6 +34,9 @@ doc components for the perl-Params-ValidationCompiler package.
 %setup -q -n Params-ValidationCompiler-0.24
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
@@ -46,7 +50,7 @@ fi
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
@@ -63,9 +67,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.24.0/Params/ValidationCompiler.pm
-/usr/lib/perl5/site_perl/5.24.0/Params/ValidationCompiler/Compiler.pm
-/usr/lib/perl5/site_perl/5.24.0/Params/ValidationCompiler/Exceptions.pm
+/usr/lib/perl5/site_perl/5.26.0/Params/ValidationCompiler.pm
+/usr/lib/perl5/site_perl/5.26.0/Params/ValidationCompiler/Compiler.pm
+/usr/lib/perl5/site_perl/5.26.0/Params/ValidationCompiler/Exceptions.pm
 
 %files doc
 %defattr(-,root,root,-)
