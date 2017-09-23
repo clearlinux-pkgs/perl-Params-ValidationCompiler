@@ -4,7 +4,7 @@
 #
 Name     : perl-Params-ValidationCompiler
 Version  : 0.24
-Release  : 5
+Release  : 6
 URL      : http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.24.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.24.tar.gz
 Summary  : 'Build an optimized subroutine parameter validator once, use it forever'
@@ -67,9 +67,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/Params/ValidationCompiler.pm
-/usr/lib/perl5/site_perl/5.26.0/Params/ValidationCompiler/Compiler.pm
-/usr/lib/perl5/site_perl/5.26.0/Params/ValidationCompiler/Exceptions.pm
+/usr/lib/perl5/site_perl/5.26.1/Params/ValidationCompiler.pm
+/usr/lib/perl5/site_perl/5.26.1/Params/ValidationCompiler/Compiler.pm
+/usr/lib/perl5/site_perl/5.26.1/Params/ValidationCompiler/Exceptions.pm
 
 %files doc
 %defattr(-,root,root,-)
