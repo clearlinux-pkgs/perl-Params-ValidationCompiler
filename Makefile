@@ -1,5 +1,5 @@
 PKG_NAME := perl-Params-ValidationCompiler
-URL = http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.26.tar.gz
-
+URL = https://www.cpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.27.tar.gz
+ARCHIVES = 
 
 include ../common/Makefile.common
