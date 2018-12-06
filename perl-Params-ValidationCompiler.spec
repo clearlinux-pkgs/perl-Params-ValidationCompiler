@@ -79,9 +79,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/Params/ValidationCompiler.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Params/ValidationCompiler/Compiler.pm
-/usr/lib/perl5/vendor_perl/5.28.0/Params/ValidationCompiler/Exceptions.pm
+/usr/lib/perl5/vendor_perl/5.28.1Params/ValidationCompiler.pm
+/usr/lib/perl5/vendor_perl/5.28.1Params/ValidationCompiler/Compiler.pm
+/usr/lib/perl5/vendor_perl/5.28.1Params/ValidationCompiler/Exceptions.pm
 
 %files dev
 %defattr(-,root,root,-)
