@@ -4,7 +4,7 @@
 #
 Name     : perl-Params-ValidationCompiler
 Version  : 0.30
-Release  : 20
+Release  : 21
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz
 Summary  : 'Build an optimized subroutine parameter validator once, use it forever'
