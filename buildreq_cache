@@ -1,7 +1,8 @@
 0.30
-perl(Specio)
+perl(Eval::Closure)
 perl(Exception::Class)
 perl(Importer)
-perl(Eval::Closure)
+perl(Specio)
 perl(Sub::Info)
+perl(Test2::Plugin::NoWarnings)
 perl(Test2::V0)

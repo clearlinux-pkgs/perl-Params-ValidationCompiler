@@ -4,13 +4,18 @@
 #
 Name     : perl-Params-ValidationCompiler
 Version  : 0.30
-Release  : 22
+Release  : 23
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz
 Summary  : 'Build an optimized subroutine parameter validator once, use it forever'
 Group    : Development/Tools
 License  : Artistic-2.0
 Requires: perl-Params-ValidationCompiler-license = %{version}-%{release}
+Requires: perl(Class::XSAccessor)
+Requires: perl(Eval::Closure)
+Requires: perl(Exception::Class)
+Requires: perl(Params::ValidationCompiler)
+Requires: perl(Types::Standard)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Eval::Closure)
 BuildRequires : perl(Exception::Class)
@@ -27,6 +32,7 @@ Params::ValidationCompiler - Build an optimized subroutine parameter validator o
 Summary: dev components for the perl-Params-ValidationCompiler package.
 Group: Development
 Provides: perl-Params-ValidationCompiler-devel = %{version}-%{release}
+Requires: perl-Params-ValidationCompiler = %{version}-%{release}
 
 %description dev
 dev components for the perl-Params-ValidationCompiler package.
@@ -47,7 +53,7 @@ license components for the perl-Params-ValidationCompiler package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -57,7 +63,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
