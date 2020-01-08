@@ -4,13 +4,14 @@
 #
 Name     : perl-Params-ValidationCompiler
 Version  : 0.30
-Release  : 23
+Release  : 24
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz
 Summary  : 'Build an optimized subroutine parameter validator once, use it forever'
 Group    : Development/Tools
 License  : Artistic-2.0
 Requires: perl-Params-ValidationCompiler-license = %{version}-%{release}
+Requires: perl-Params-ValidationCompiler-perl = %{version}-%{release}
 Requires: perl(Class::XSAccessor)
 Requires: perl(Eval::Closure)
 Requires: perl(Exception::Class)
@@ -46,8 +47,18 @@ Group: Default
 license components for the perl-Params-ValidationCompiler package.
 
 
+%package perl
+Summary: perl components for the perl-Params-ValidationCompiler package.
+Group: Default
+Requires: perl-Params-ValidationCompiler = %{version}-%{release}
+
+%description perl
+perl components for the perl-Params-ValidationCompiler package.
+
+
 %prep
 %setup -q -n Params-ValidationCompiler-0.30
+cd %{_builddir}/Params-ValidationCompiler-0.30
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -72,7 +83,7 @@ make TEST_VERBOSE=1 test || :
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Params-ValidationCompiler
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Params-ValidationCompiler/LICENSE
+cp %{_builddir}/Params-ValidationCompiler-0.30/LICENSE %{buildroot}/usr/share/package-licenses/perl-Params-ValidationCompiler/794bd8763699cbac458526f291cbe554a29907ca
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -85,9 +96,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Params/ValidationCompiler.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Params/ValidationCompiler/Compiler.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Params/ValidationCompiler/Exceptions.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -97,4 +105,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Params-ValidationCompiler/LICENSE
+/usr/share/package-licenses/perl-Params-ValidationCompiler/794bd8763699cbac458526f291cbe554a29907ca
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Params/ValidationCompiler.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Params/ValidationCompiler/Compiler.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Params/ValidationCompiler/Exceptions.pm
